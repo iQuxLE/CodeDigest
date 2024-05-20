@@ -34,9 +34,3 @@ poetry run python app/scripts/summarize_files.py
 poetry run python app/scripts/process.py
 ```
 
-### For testing:
-
-```
- export PYTHONPATH=$PYTHONPATH:$(pwd)/src 
- poetry run pytest 
-```
