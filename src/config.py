@@ -1,10 +1,12 @@
 import os
 from pydantic import BaseModel
+from dotenv import load_dotenv
 
+load_dotenv()
 
 class Config(BaseModel):
-    project_root: str = os.getenv('PROJECT_ROOT', '/path/to/project')
-    output_file: str = os.getenv('OUTPUT_FILE', 'output.txt')
+    project_root: str = os.getenv('PROJECT_ROOT')
+    output_file: str = os.getenv('OUTPUT_FILE')
     openai_api_key: str = os.getenv('OPENAI_API_KEY')
     description_prompt: str = ("You are a software engineer and Python expert. "
                                "If any functions in the following file lack descriptions, generate them.")
@@ -19,3 +21,7 @@ class Config(BaseModel):
 
 
 config = Config()
+print(config.openai_api_key)
+print(config.project_root)
+
+
