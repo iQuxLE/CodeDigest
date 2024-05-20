@@ -1,3 +1,5 @@
+Summarize content of projects, generate tree structures and add missing code descriptions using GPT-4o.
+
 ### Before:
 
 ```
