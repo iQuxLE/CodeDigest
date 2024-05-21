@@ -1,5 +1,5 @@
-from ..config import Config
-import os
+from config import Config
+
 
 def test_config_values():
     config = Config()

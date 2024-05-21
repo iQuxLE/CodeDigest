@@ -1,10 +1,12 @@
 import os
 from config import config
-from core.file_processing import concatenate_files
+from src.core.file_processing import concatenate_files
 
 
 
 def summarize_project_files(project_root):
+
+
     src_folder = None
     for dirpath, dirnames, _ in os.walk(project_root):
         if 'src' in dirnames:

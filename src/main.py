@@ -3,8 +3,8 @@
 # from dotenv import load_dotenv
 # import os
 # import openai
-# from src.config import config
-#
+from src.config import config
+from src.scripts.process import process_project
 # # Load environment variables from a .env file if it exists
 # load_dotenv()
 #
@@ -15,3 +15,5 @@
 #
 # # Set OpenAI API key from environment variable or config file
 # openai.api_key = os.getenv('OPENAI_API_KEY', config.openai_api_key)
+process_project(config.project_root)
+

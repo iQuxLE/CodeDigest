@@ -1,7 +1,7 @@
 import os
 from config import config
-from core.file_processing import concatenate_files
-from core.project_structure import generate_tree_structure
+from src.core.file_processing import concatenate_files, summary
+from src.core.project_structure import generate_tree_structure
 
 
 def process_project(project_root):
@@ -14,12 +14,13 @@ def process_project(project_root):
     if not src_folder:
         raise FileNotFoundError("No 'src' folder found.")
 
-    tree_structure = generate_tree_structure(project_root)
+    # tree_structure = generate_tree_structure(project_root)
 
-    with open(config.output_file, 'w') as outfile:
-        outfile.write(f"Project Tree Structure:\n{tree_structure}\n")
+    # with open(config.output_file, 'w') as outfile:
+    #     outfile.write(f"Project Tree Structure:\n{tree_structure}\n")
 
     concatenate_files(src_folder, config.output_file)
+    summary(config.output_file)
 
     print(f"Processing complete. Output file: {config.output_file}")
 
